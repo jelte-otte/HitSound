@@ -2,14 +2,13 @@ package me.seyit.hitsound;
 
 import me.seyit.hitsound.config.ConfigHandler;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 
 public class SoundManager {
-    public static final Identifier HIT_SOUND_ID = new Identifier("hitsound", "hit");
+    public static final Identifier HIT_SOUND_ID = HitSound.HIT_SOUND_ID;
     public static SoundEvent HIT_SOUND_EVENT;
 
     public void registerSounds() {
@@ -25,7 +24,7 @@ public class SoundManager {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.player != null) {
             float volume = ConfigHandler.configData.volume;
-            client.player.playSound(HIT_SOUND_EVENT, SoundCategory.PLAYERS, volume, 1.0F);
+            client.player.playSound(HIT_SOUND_EVENT, volume, 1.0F);
         }
     }
 }

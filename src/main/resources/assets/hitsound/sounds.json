@@ -1,7 +1,10 @@
 {
-  "hit": {
+  "default": {
     "sounds": [
-      "hitsound:default"
+      {
+        "name": "hitsound:default",
+        "stream": false
+      }
     ]
   }
 }
