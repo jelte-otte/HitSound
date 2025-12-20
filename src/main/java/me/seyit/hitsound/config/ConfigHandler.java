@@ -64,6 +64,8 @@ public class ConfigHandler {
 
     public static class ConfigData {
         public String selectedSound = "default.ogg";
-        public float volume = 1.0F;
+        public float hitSoundVolume = 1.0F;
+        public float vanillaHitSoundVolume = 1.0F;
+        public float vanillaCritSoundVolume = 1.0F;
     }
 }

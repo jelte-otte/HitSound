@@ -23,7 +23,7 @@ public class SoundManager {
     public void playHitSound() {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.player != null) {
-            float volume = ConfigHandler.configData.volume;
+            float volume = ConfigHandler.configData.hitSoundVolume;
             client.player.playSound(HIT_SOUND_EVENT, volume, 1.0F);
         }
     }
