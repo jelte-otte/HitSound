@@ -10,7 +10,7 @@ import me.seyit.hitsound.config.ConfigHandler;
 
 public class HitSound implements ModInitializer {
     public static final String MOD_ID = "hitsound";
-    public static final Identifier HIT_SOUND_ID = new Identifier(MOD_ID, "default");
+    public static final Identifier HIT_SOUND_ID = Identifier.of(MOD_ID, "default");
     public static SoundEvent HIT_SOUND_EVENT = SoundEvent.of(HIT_SOUND_ID);
     public static SoundManager soundManager;
 

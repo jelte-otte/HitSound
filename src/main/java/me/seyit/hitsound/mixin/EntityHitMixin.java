@@ -1,5 +1,4 @@
 package me.seyit.hitsound.mixin;
-
 import me.seyit.hitsound.HitSound;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
