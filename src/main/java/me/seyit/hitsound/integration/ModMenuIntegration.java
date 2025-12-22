@@ -37,11 +37,25 @@ public class ModMenuIntegration implements ModMenuApi {
 
             general.addEntry(dropdownMenu.build());
 
-            IntSliderBuilder volumeSlider = entryBuilder.startIntSlider(Text.literal("Volume"), (int) (ConfigHandler.configData.volume * 100), 0, 100)
+            IntSliderBuilder HitSoundVolumeSlider = entryBuilder.startIntSlider(Text.literal("Hit Sound Volume"), (int) (ConfigHandler.configData.hitSoundVolume * 100), 0, 100)
                     .setDefaultValue(100)
-                    .setSaveConsumer(newValue -> ConfigHandler.configData.volume = newValue / 100.0f);
+                    .setSaveConsumer(newValue -> ConfigHandler.configData.hitSoundVolume = newValue / 100.0f);
 
-            general.addEntry(volumeSlider.build());
+            IntSliderBuilder VanillaHitSoundVolumeSlider = entryBuilder.startIntSlider(Text.literal("Vanilla Hit Sound Volume"),(int) (ConfigHandler.configData.vanillaHitSoundVolume * 100), 0, 100)
+                    .setDefaultValue(100)
+                    .setSaveConsumer(newValue -> ConfigHandler.configData.vanillaHitSoundVolume = newValue / 100.0f);
+
+            IntSliderBuilder VanillaCritSoundVolumeSlider = entryBuilder.startIntSlider(Text.literal("Vanilla Hit Sound Crit"),(int) (ConfigHandler.configData.vanillaCritSoundVolume * 100), 0, 100)
+                    .setDefaultValue(100)
+                    .setSaveConsumer(newValue -> ConfigHandler.configData.vanillaCritSoundVolume = newValue / 100.0f);
+
+
+
+            general.addEntry(HitSoundVolumeSlider.build());
+
+            general.addEntry(VanillaHitSoundVolumeSlider.build());
+
+            general.addEntry(VanillaCritSoundVolumeSlider.build());
 
             builder.setSavingRunnable(ConfigHandler::saveConfig);
 
